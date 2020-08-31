@@ -58,6 +58,33 @@ image_pub_.publish(cv_ptr->toImageMsg());
 ~~~
 
 4. Output modified video stream
+
+
+**2. image.cpp**
+
++ canny edege detection function
+
+~~~cpp
+void imageCallback(const sensor_msgs::ImageConstPtr& msg)
+{
+    try
+    {
+           cv::Mat img;
+           img = cv_bridge::toCvShare(msg,"bgr8" )->image;
+           cv::Mat contours;
+           cv::Mat gray_image;
+
+           cvtColor(img, gray_image, CV_RGB2GRAY );
+
+           cv::Canny(img,contours,10,350);
+
+           cv::imshow("Image",img);
+           cv::imshow("Canny",contours);
+           cv::imwrite("save.jpg",contours);
+           cv::waitKey(30);
+
+    }
+  ~~~
     
   
   
