@@ -68,9 +68,13 @@ if __name__ == '__main__':
         elif turtle.one==1: ## check that the velocity of robot always less than max_val
              for i < max_vel_linear and j < max_vel_angular:
                 vel_msg.linear.x=turtle.linear*i*0.5
+             
+                vel_msg.angular.z=turtle.angular*z*0.3
                 
-                vel_msg.angular.z=turtle.angular*j*0.3
-                
+                if turtle.linear==0 and turtle.angular != 0: ## check that oprater change from (X=0, Y=+1,-1) to (X=+1,-1, Y=0)
+                	vel_msg.angular.z = turtle.angular*0.2
+                else: 
+                	 pass
 
                 
         elif turtle.x==1: # stop robot

@@ -58,10 +58,8 @@ inn=0
 if __name__ == '__main__':
  while 1:
      if inn==1:
-        if turtle.nemo==1: # move robot slow
-             vel_msg.linear.x=turtle.linear*0.1
-             vel_msg.angular.z=turtle.angular*1.2
-        elif turtle.semo==1: # reset odom
+        
+        if turtle.semo==1: # reset odom
              #subprocess.call('',shell=True)
              p=subprocess.Popen('rostopic pub /reset std_msgs/Empty "{}"',shell=True)
              time.sleep(2)
