@@ -1,0 +1,41 @@
+<!-- Starts up everything needed to run the example listener/talker nodes. -->
+<launch>
+  <!-- Arguments to allow changing common parameters from the command line or when including this file from other launch files. -->
+  
+  
+
+  <!-- The C++ talker node will publish a custom message. -->
+  <node pkg="demo" type="talker" name="talker"/>
+    
+  <!-- The C++ listener node subscribes to the custom message that either talker is publishing. -->
+  <node pkg="demo" type="listener" name="listener"/>
+    
+  
+
+<!-- The python listener node subscribes to the custom message that either talker is publishing. -->
+
+<node pkg="demo" type="listener.py" name="cpp_py_listener"/>
+    
+  
+
+
+
+
+
+  <!-- The Python talker node will publish a custom message. -->
+  <node pkg="demo" type="talker.py" name="pytalker"/>
+    
+    
+
+  <!-- The Python listener node subscribes to the custom message that either talker is publishing. -->
+  <node pkg="demo" type="listener.py" name="pylistener"/>
+    
+
+<!-- The cpp listener node subscribes to the custom message that either talker is publishing. -->
+
+<node pkg="demo" type="listener" name="py_cpp_listener"/>
+    
+  
+
+  <include file="$(find demo)/launch/tools.launch"/>
+</launch>
