@@ -15,4 +15,6 @@
       
    Second thing is that combination is really matter when we want to get desired rate. 
       
-**C.** 
+**C.** While dealing with roscpp we should have to make that cpp file excutable we have to add excutable, dependencies and target_linke_library. Here we are working with configure file to change the publishing rate using dynamic reconfigure GUI, so we have to add the .cfg file in Cmake.txt and dependacecies. Where as when we are working with rospy didn't need to worry about those all things we did for roscpp, using import libraires we can use dynamic reconfigure. 
+
+As we did different experiment above(a,b,c,d) we understood the how these effect the result.
